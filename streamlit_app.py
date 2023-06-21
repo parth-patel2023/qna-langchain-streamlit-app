@@ -31,20 +31,20 @@ def process_long_text(long_text):
 def question_answering_app():
     # Set up the Streamlit app
     st.title("Question Answering App")
-    st.write("Enter a long text and convert it to a text file for further processing.")
 
     # Create input box for long text
-    long_text = st.text_area("Enter long text", height=300)
-
+    long_text = st.text_area("Enter the text", height=300)
+   
+   
     # Create a placeholder for the qa variable
     session_state = st.session_state
     if 'qa' not in session_state:
         session_state.qa = None
 
     # Button to convert long text to text file
-    if st.button("Convert to Text File"):
+    if st.button("Learn"):
         session_state.qa = process_long_text(long_text)
-        st.write("Process is completed successfully!")
+        # st.write("Learning process is completed successfully!")
 
     # Process user input when question is provided
     if session_state.qa is not None:
@@ -58,9 +58,10 @@ def question_answering_app():
             # Display the answer
             st.write("Answer:", answer)
         else:
-            st.write("Please enter a question.")
+            st.write("")
     else:
-        st.write("Please convert the long text to a text file first.")
+        st.write("")
+        # st.write("Please convert the long text to a text file first.")
 
 
 if __name__ == "__main__":
