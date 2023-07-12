@@ -1,5 +1,5 @@
-langchain
+langchain==0.0.133
 streamlit
 cohere
 chromadb
-typing_extensions==4.5.0
+
