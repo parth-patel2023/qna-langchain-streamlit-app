@@ -1,4 +1,4 @@
-langchain
-streamlit
-cohere
-chromadb
+langchain==0.0.230
+streamlit==1.24.1
+cohere==4.12.1
+chromadb==0.3.27
