@@ -22,9 +22,9 @@ def process_long_text(long_text):
     texts = text_splitter.split_documents(documents)
 
     embeddings = CohereEmbeddings(
-        cohere_api_key='FoY9OqiB9Zpsm1siHOGOYHrgXn2ExUHwn9YVSmzk')
+        cohere_api_key='U25sqdQV6D0w5OGJ7eS2VD0MSVyfAlKDC9KIWhe4')
     docsearch = Chroma.from_documents(texts, embeddings)
-    llm = Cohere(cohere_api_key='FoY9OqiB9Zpsm1siHOGOYHrgXn2ExUHwn9YVSmzk')
+    llm = Cohere(cohere_api_key='U25sqdQV6D0w5OGJ7eS2VD0MSVyfAlKDC9KIWhe4')
     qa = RetrievalQA.from_chain_type(llm=llm,
                                      chain_type="stuff", retriever=docsearch.as_retriever(search_kwargs={"k": 1}))
 
